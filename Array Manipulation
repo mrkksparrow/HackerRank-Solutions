@@ -1,0 +1,27 @@
+//mr.kksparrow
+
+#include <iostream>
+using namespace std;
+int main() {
+    long int n,m;
+    cin >>n>>m;
+    long int *arr = new long int[n+1]();
+    long int a,b,c;
+    for(long int i=0; i<m; i++){
+        cin >>a>>b>>c;
+        arr[a] += c;
+        if((b+1) <= n){
+            arr[b+1] -= c;
+        }
+    }
+    long int max=0,temp=0;
+    for(long int i=0; i<=n; i++)
+    {
+       temp += arr[i];
+       if(max < temp){
+            max = temp;
+       }
+    }
+    cout << max;
+    return 0;
+}
