@@ -1,4 +1,5 @@
-//mr.kksparrow 
+//mr.kksparrow
+
 #include <iostream>
 using namespace std;
 int main(){
