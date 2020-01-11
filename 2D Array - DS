@@ -1,0 +1,35 @@
+//mr.kksparrow 
+#include <iostream>
+using namespace std;
+int main(){
+    int arr[6][6];
+    for (int i=0; i<6; i++){
+        for (int j=0; j<6; j++){
+            cin >> arr[i][j];
+        }
+    }
+    int sum=0,x=0, y=0, tempx=0, tempy=0;
+    for(int a=0; a<4; a++){
+        x = a;
+        for (int b=0; b<4; b++){
+            y = b;
+            for (int i=x; i<=x+2; i++){
+                for (int j=y; j<=y+2; j++){
+                    tempx += arr[i][j];
+                }
+            }
+            tempx -= arr[x+1][y];
+            tempx -= arr[x+1][y+2];
+            tempy = tempx;
+            if(x==0 && y==0){
+                sum = tempx;
+            }
+            tempx = 0;
+            if(tempy > sum){
+                sum = tempy;
+            }
+        }
+    }
+    cout << sum;
+    return 0;
+}
